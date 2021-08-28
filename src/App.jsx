@@ -1,14 +1,19 @@
-import React from 'react'
-import Body from './components/Body'
-
+import React from "react";
+import { HashRouter, Switch, Route } from "react-router-dom";
+import Blacklist from "./pages/blacklist";
+import Home from "./pages/home";
 
 function App() {
-
   return (
-    <div className="container px-6 py-4 mx-auto">
-      <Body />
-    </div>
-  )
+    <>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" children={<Home />} />
+          <Route path="/blacklist" children={<Blacklist />} />
+        </Switch>
+      </HashRouter>
+    </>
+  );
 }
 
-export default App
+export default App;

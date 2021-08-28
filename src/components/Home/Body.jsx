@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { GET_REQUESTS, DELETE_REQUEST } from "../query";
+import { GET_REQUESTS, DELETE_REQUEST } from "../../query";
 import Card from "./Card";
 
 function Body() {
