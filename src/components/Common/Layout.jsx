@@ -20,6 +20,7 @@ function Layout({ children }) {
       >
         <Item key="home">Home</Item>
         <Item key="blacklist">Blacklist</Item>
+        <Item key="update">Update</Item>
       </Menu>
       <main className="container px-6 py-4 mx-auto">{children}</main>
     </>

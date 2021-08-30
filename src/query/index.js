@@ -56,3 +56,11 @@ export const CREATE_BLACKLIST = gql`
     }
   }
 `;
+
+export const UPDATE_TEAM = gql`
+  mutation ($updateTeamId: String!, $updateTeamContent: Team) {
+    updateTeam(id: $updateTeamId, content: $updateTeamContent) {
+      message
+    }
+  }
+`;
