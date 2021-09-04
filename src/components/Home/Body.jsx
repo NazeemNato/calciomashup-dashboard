@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { GET_REQUESTS, DELETE_REQUEST } from "../../query";
+import { GET_REQUESTS, DELETE_REQUEST, GET_STATUS } from "../../query";
 import Card from "./Card";
 
 function Body() {
@@ -22,7 +22,7 @@ function Body() {
       variables: {
         deleteRequestId: id,
       },
-      refetchQueries: [{ query: GET_REQUESTS }],
+      refetchQueries: [{ query: GET_REQUESTS }, { query: GET_STATUS }],
     });
   };
 

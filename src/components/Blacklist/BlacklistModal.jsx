@@ -1,6 +1,12 @@
 import React, { useRef } from "react";
 import { Modal, Select, Form, notification } from "antd";
-import { GET_TEAMS, GET_BLACKLISTS, CREATE_BLACKLIST } from "../../query";
+import {
+  GET_TEAMS,
+  GET_BLACKLISTS,
+  CREATE_BLACKLIST,
+  GET_REQUESTS,
+  GET_STATUS,
+} from "../../query";
 import { useQuery, useMutation } from "@apollo/client";
 
 const { Option } = Select;
@@ -18,7 +24,11 @@ function BlacklistModal({ isModalVisible, handleOk, handleCancel }) {
         makeBlacklistMashupT1: team1,
         makeBlacklistMashupT2: team2,
       },
-      refetchQueries: [{ query: GET_BLACKLISTS }],
+      refetchQueries: [
+        { query: GET_BLACKLISTS },
+        { query: GET_REQUESTS },
+        { query: GET_STATUS },
+      ],
     });
     formRef.current.resetFields();
     handleCancel();

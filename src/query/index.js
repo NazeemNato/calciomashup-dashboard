@@ -28,6 +28,7 @@ export const GET_REQUESTS = gql`
 export const GET_BLACKLISTS = gql`
   query {
     blacklistedClubs {
+      id
       team1 {
         name
       }
@@ -60,6 +61,23 @@ export const CREATE_BLACKLIST = gql`
 export const UPDATE_TEAM = gql`
   mutation ($updateTeamId: String!, $updateTeamContent: Team) {
     updateTeam(id: $updateTeamId, content: $updateTeamContent) {
+      message
+    }
+  }
+`;
+
+export const GET_STATUS = gql`
+  query {
+    status {
+      toalRequests
+      totalBlacklists
+      totalTeams
+    }
+  }
+`;
+export const DELETE_BLACKLIST = gql`
+  mutation ($deleteblacklistId: String!) {
+    deleteblacklist(id: $deleteblacklistId) {
       message
     }
   }
